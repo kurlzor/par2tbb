@@ -278,7 +278,7 @@ template <> bool ReedSolomon<Galois16>::SetInput(u32 count)
 
   #if __GNUC__ && (__i386__ || __x86_64__)
     #include <sys/types.h>
-    #include <sys/sysctl.h>
+    #include <linux/sysctl.h>
 
     #if __x86_64__
       extern "C" void rs_process_x86_64_scalar(void* dst, const void* src, size_t size, const u32* LH);
@@ -297,7 +297,7 @@ template <> bool ReedSolomon<Galois16>::SetInput(u32 count)
 
   #if __GNUC__ && (__i386__ || __x86_64__)
     #include <sys/types.h>
-    #include <sys/sysctl.h>
+    #include <linux/sysctl.h>
 
     #if __x86_64__
   extern "C" void rs_process_x86_64_mmx(void* dst, const void* src, size_t size, const u32* LH);
